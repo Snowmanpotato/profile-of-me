@@ -10,16 +10,17 @@
     
 </body>
 <script>
-    let userName = prompt("Who is there?")
+    let userName = prompt("Who is there?");
     if (userName == 'admin'){
-      let pass = prompt("Password??")  
-    } if (pass == 'TheMaster'){
+      let pass = prompt("Password??")  ;
+     if (pass == 'TheMaster'){
         alert("Welcome.")
-    }   else if (pass == "null"){
+        } else if (pass == "null"){
             alert("Canceled.")
-    }   else {
+        } else {
             alert("Wrong password!!")
-    }   else if(userName == "null"){
+        }
+    }else if(userName == "null"){
              alert("Canceled.")
     } else {
         alert("I don’t know you")
