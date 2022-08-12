@@ -11,11 +11,11 @@
 </body>
 <script>
     let number = parseInt(prompt("number",0))
-    switch (number){
-        case (number>0):
+    switch ((number>0) ? 1: (number<0) ? -1 : 0){
+        case (1):
         alert("1");
         break;
-        case (number<0):
+        case (-1):
         alert("-1");
         break;
         default:
