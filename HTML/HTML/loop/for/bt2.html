@@ -7,11 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-    <script>
-        let radius = prompt('Nhập bán hính hình tròn');
-        let Radius = parseInt(radius);
-        let Perimeter = 3.14*(Radius*2);
-        document.write('Chu vi hình tròn là: ' + Perimeter)
-    </script>
+    
 </body>
+<script>
+    let num = Number(prompt('number'));
+    let total = 0
+    if(num > 0){
+
+    for(i = 1; i <= num; i++){
+        total += i;
+    } alert(total)
+} else {
+    alert('wrong number')
+}
+</script>
 </html>

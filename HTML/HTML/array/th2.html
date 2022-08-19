@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Viết chương trình tạo ra một mảng số nguyên M gồm 10 phần tử được sinh ngẫu nhiên từ 20 đến 30.
+     Sau đó yêu cầu người dùng nhập vào một giá trị n,
+      hiển thị lên màn hình mảng M và thông báo "n có xuất hiện trong mảng M" nếu n xuất hiện trong mảng M,
+     ngược lại thông báo "n không xuất hiện trong mảng M".   -->
+</body>
+<script>
+    let count = 0
+    let num
+    do{
+     num = Number(prompt('number'));
+    }
+    while(isNaN(num));
+    let array = new Array(10);
+    for(let i = 0; i < array.length; i++) {
+        array[i] = Math.floor(Math.random() * (30 - 20 ) + 20);
+        document.write(`${array[i]} </br>`);
+        if(num == array[i]){
+            count = 1;
+            break;
+        }
+    }
+    if(count==1){
+        document.write(`${num} có xuất hiện trong mảng `)
+    } else {
+        document.write(`${num} không xuất hiện trong mảng `)
+    }
+    
+   
+
+    
+</script>
+</html>
