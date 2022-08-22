@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let number = parseInt(prompt("Nhập n số nguyên tố đầu tiên: "));
+    let count = 0;
+    let countSNT = 0;
+    for (N = 2; N < 1000; N++) {
+        if (countSNT < number) {
+            for (j = 1; j <= N; j++) {
+                if (N % j == 0) {
+                    count += 1;
+                }
+            }
+            if (count == 2) {
+                document.write(N + '<br>')
+                countSNT += 1;
+            }
+            count = 0
+        } else {
+            break;
+        }
+    }
+</script>
+
+</html>
