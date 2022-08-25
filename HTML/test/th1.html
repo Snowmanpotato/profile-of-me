@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<!-- <script>
+    function getArray(min, max, length) {
+        let array = new Array(length);
+        for (let i = 0; i < array.length; i++) {
+            array[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        return array;
+    }
+    let retur_array = getArray(10, 20, 10);
+    document.write(retur_array);
+</script> -->
+<script>
+    let min = 20; max = 30; length = 10;
+    let retur_array = getArray(min, max, length);
+    document.write(retur_array);
+    document.write("<br>");
+    function getArray(min, max, length) {
+        let array = new Array(length);
+        for (let i = 0; i < array.length; i++) {
+            array[i] = Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        return array;
+    }
+    //đếm số chẵn
+    function countEven_num(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+    let countEven = countEven_num(retur_array);
+    document.write(`Mảng có ${countEven} số chẵn`);
+    document.write("<br>");
+
+    // // đếm số chính phương
+    function countSquare_num(arr) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (Number.isInteger(Math.sqrt(arr[i])) == true) {
+                count += 1;
+            }
+        }
+        return count;
+    }
+    let countSquare = countSquare_num(retur_array);
+    document.write(`Mảng có ${countSquare} số chính phương`);
+    document.write("<br>");
+    // // đếm số nguyên tố
+    function countPrime_num(arr) {
+        let countPrime = 0;
+        for (let i = 0; i < arr.length; i++) {
+            let countdivisor = 0;
+            for (let j = 2; j < arr[i] / 2; j++) {
+                if (arr[i] % j == 0) {
+                    countdivisor += 1;
+                }
+            }
+            if (countdivisor == 0) {
+                countPrime += 1;
+            }
+        }
+        return countPrime;
+    }
+    let countPrime = countPrime_num(retur_array);
+    document.write(`Mảng có ${countPrime} số nguyên tố`);
+</script>
+
+</html>

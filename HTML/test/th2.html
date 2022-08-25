@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // mảng trong mảng
+    let min = 10; max = 90; rowls = 10; colum = 10;
+    function getArray(min, max, rowls, colum) {
+        let array = new Array(rowls);
+        for (let i = 0; i < rowls; i++) {
+            array[i] = [];
+            for (let j = 0; j < colum; j++) {
+                array[i][j] = Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+        }
+        return array;
+    }
+    let retur_array = getArray(min, max, rowls, colum);
+    document.write(retur_array.join(`<br>`));
+    document.write(`</br>`);
+    document.write(`</br>`);
+    //tính tổng số chẵn
+    function sumEven_num(arr) {
+        let sum = 0;
+        for (let i = 0; i < rowls; i++) {
+            for (let j = 0; j < colum; j++) {
+                if (arr[i][j] % 2 == 0) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+    let sumEven = sumEven_num(retur_array);
+    document.write(`Tổng số chẵn trong mảng là ${sumEven}`);
+    document.write("<br>");
+    //tổng đường chéo chính
+    function sum_MainDiagonal_num(arr) {
+        let sum = 0;
+        for (let i = 0, j = 0; i < rowls && j < colum; i++ && j++) {
+            sum += arr[i][j];
+        }
+        return sum;
+    }
+    let sum_mainDiagonal = sum_MainDiagonal_num(retur_array);
+    document.write(`Tổng đường chéo chính trong mảng là ${sum_mainDiagonal}`);
+    document.write("<br>");
+    //tổng đường chéo phụ
+    function sum_SecondaryDiagonal_num(arr) {
+        let sum = 0;
+        for (let i = 0, j = colum - 1; i < rowls && j >= 0; i++, j--) {
+            sum += arr[i][j];
+        }
+        return sum;
+    }
+    let sum_SecondaryDiagonal = sum_SecondaryDiagonal_num(retur_array);
+    document.write(`Tổng đường chéo phụ trong mảng là ${sum_SecondaryDiagonal}`);
+    document.write("<br>");
+    //Tính tổng các giá trị trên đường biên
+    function sum_Borderline_num(arr) {
+        let sum = 0;
+        for (let i = 0; i < rowls; i++) {
+            for (let j = 0; j < colum; j++) {
+                if (i == 0 || j == 0 || i == rowls - 1 || j == colum - 1) {
+                    sum += arr[i][j];
+                }
+            }
+        }
+        return sum;
+    }
+    let sum_Borderline = sum_Borderline_num(retur_array);
+    document.write(`Tổng đường biên trong mảng là ${sum_Borderline}`);
+    document.write("<br>");
+    // hiển thị tam giác dưới
+    function lowerTriangle(arr) {
+        let array2 = new Array();
+        for (let i = 0; i < rowls; i++) {
+            array2[i] = [];
+            for (let j = 0; j <= i ; j++) {
+                array2[i][j] = arr[i][j];
+            }
+        }
+        return array2;
+    }
+    let lowerTriangle_1 = lowerTriangle(retur_array);
+    document.write(lowerTriangle_1.join(`<br>`));
+    document.write("<br>");
+    // hiển thị tam giác trên
+    function upperTriangle(arr) {
+        let array2 = new Array();
+        let cols = colum
+        for (let i = 0; i < rowls; i++) {
+            array2[i] = [];
+            for (let j = 0; j < cols ; j++) {
+                array2[i][j] = arr[i][j];
+            }
+            cols--;
+        }
+        return array2;
+    }
+    let upperTriangle_1 = upperTriangle(retur_array);
+    document.write(upperTriangle_1.join(`<br>`));
+</script>
+
+</html>
