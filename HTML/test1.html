@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table class="table" border="1">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Date of birth</td>
+                <td>Gender</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+           
+        </tbody>
+    </table>
+</body>
+<script>
+    let students = [
+        {
+        id: 1,
+        name: 'Nguyễn Văn A',
+        dob: '01/01/2001',
+        gender: true,
+        email: 'exempal@gmail.com' 
+        },
+        {
+        id: 2,
+        name: 'Nguyễn Văn B',
+        dob: '01/01/2001',
+        gender: true,
+        email: 'exempal@gmail.com' 
+        },
+        {
+        id: 3,
+        name: 'Nguyễn Văn C',
+        dob: '01/01/2001',
+        gender: true,
+        email: 'exempal@gmail.com' 
+        },
+    ]
+function showStudent(){
+    let html = students.map(function(student, index){
+        return` 
+                <tr>
+                    <td>${index +1}</td>
+                    <td>${student.name}</td>
+                    <td>${student.dob}</td>
+                    <td>${student.gender}</td>
+                    <td>${student.email}</td>
+                </tr>
+            `
+    })
+    document.querySelector('.tbody').innerHTML = html.join("");
+}
+
+showStudent()
+</script>
+</html>
