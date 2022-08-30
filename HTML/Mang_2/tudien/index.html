@@ -1,66 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
 <body>
-    <p id="tictactoe"></p>
-    <input type="button" value="change value" onclick="changevalue()"></input>
-</body>
-<script>
-    let b = document.getElementById('tictactoe');
-    let data = '';
-    let board = [];
-    var h = 1;
-    //
-    for (let i = 0; i < 5; i++) {
-        board[i] = new Array('(.)', '(.)', '(.)', '(.)', '(.)');
-    }
-    //
-    for (i = 0; i < 5; i++) {
-        data += '<br>';
-        for (j = 0; j < 5; j++) {
-            data += board[i][j] + '&ensp;';
-        }
-    }
-    b.innerHTML = data;
-    //
-    function changevalue() {
-        data = ''
-        let positionX = parseInt(prompt('Enter the position of x'));
-        let positionY = parseInt(prompt('Enter the position of y'));
-        if (h % 2 == 0) {
-            board[positionX][positionY] = 'x'
-        } else {
-            board[positionX][positionY] = 'o'
-        }
-        h++;
-        for (i = 0; i < 5; i++) {
-            data += '<br>';
-            for (j = 0; j < 5; j++) {
-                data += board[i][j] + '&ensp;' + '&ensp;' + '&ensp;';
-            }
-        }
-        b.innerHTML = data
-        //
-        for (i = 0; i < 5; i++) {
-            for (j = 0; j < 5; j++) {
-                if (board[i][j] === 'x' && board[i][j + 1] === 'x' && board[i][j + 2] === 'x' ||
-                    board[i][j] === 'x' && board[i + 1][j] === 'x' && board[i + 2][j] === 'x') {
-                    alert('x thắng')
-                }
-                else if (board[i][j] === 'o' && board[i][j + 1] === 'o' && board[i][j + 2] === 'o' ||
-                    board[i][j] === 'o' && board[i + 1][j] === 'o' && board[i + 2][j] === 'o') {
-                    alert('o thắng')
-                }
-            }
-        }
-    }
-</script>
+    <script>
+        let number = parseInt(prompt("Nhập số cần check "));
+        isPrime(number)
 
+        function isPrime(number){
+            let count = 0; // đếm số ước của số đang check
+            let isPrime = false;
+
+            if (number == 0) {
+                alert(number + " không là số nguyên tố")
+            } else {
+                for ( let i = 1; i <= number; i++) {
+                    if(number % i == 0) {
+                        count += 1;
+                    }
+                }
+                
+                if (count ==2 ) {
+                    isPrime = true
+                }
+
+                if (isPrime) {
+                    alert(number + " là số nguyên tố")
+                } else {
+                    alert (number + " không là số nguyên tố")
+                }
+            }
+        }
+    </script>
+</body>
 </html>
