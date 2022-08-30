@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let r = Number(parseInt(prompt('nhập bán kính đường tròn:')));
+
+    function areaCircle (num1) {
+        let result1 = Math.pow(num1,2)* Math.PI
+        return result1.toFixed(2)
+    }
+   document.write(`Diện tích đường tròn với bán kính là ${r} bằng ${areaCircle(r)} <br>`)
+
+    function circumference (num2) {
+        let result2 = (num2*2)* Math.PI;
+        return result2.toFixed(2)
+    }
+    
+    document.write(`Chu vi đường tròn với bán kính là ${r} bằng ${circumference(r)} <br>` )
+   
+  
+</script>
+</html>
