@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Tiền thu nhập trong 1 tháng</td>
+          <td><input type="number" id="money" oninput="formula()" /></td>
+        </tr>
+        <tr>
+          <td>Pay Taxes</td>
+          <td><input type="text" id="payTaxes" readonly /></td>
+        </tr>
+        <tr>
+          <td><button onclick="formula()">Check</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+  <script>
+    const income_5tr = 5000000;
+const income_10tr = 10000000;
+const income_18tr = 18000000;
+const income_32tr = 32000000;
+const income_52tr = 52000000;
+const income_80tr = 80000000;
+
+const tax_5tr = 0.05;
+const tax_10tr = 0.1;
+const tax_18tr = 0.15;
+const tax_32tr = 0.2;
+const tax_52tr = 0.25;
+const tax_80tr = 0.3;
+const taxover_81tr = 0.35;
+
+function formula() {
+  let money = Number(document.querySelector("#money").value);
+  let payTaxes = document.querySelector("#payTaxes");
+  switch (true) {
+    case money >= 0 && money <= income_5tr: {
+      payTaxes.value = money * tax_5tr;
+      break;
+    }
+    case money <= income_10tr: {
+      payTaxes.value = (money - income_5tr) * tax_10tr + income_5tr * tax_5tr;
+      break;
+    }
+    case money <= income_18tr: {
+      payTaxes.value =
+        (money - income_10tr) * tax_18tr +
+        income_10tr * tax_10tr +
+        income_5tr * tax_5tr;
+      break;
+    }
+    case money <= income_32tr: {
+      payTaxes.value =
+        (money - income_18tr) * tax_32tr +
+        income_18tr * tax_18tr +
+        income_10tr * tax_10tr +
+        income_5tr * tax_5tr;
+      break;
+    }
+    case money <= income_52tr: {
+      payTaxes.value =
+        (money - income_32tr) * tax_52tr +
+        income_32tr * tax_32tr +
+        income_18tr * tax_18tr +
+        income_10tr * tax_10tr +
+        income_5tr * tax_5tr;
+      break;
+    }
+    case money <= income_80tr: {
+      payTaxes.value =
+        (money - income_52tr) * tax_80tr +
+        income_52tr * tax_52tr +
+        income_32tr * tax_32tr +
+        income_18tr * tax_18tr +
+        income_10tr * tax_10tr +
+        income_5tr * tax_5tr;
+      break;
+    }
+    case money > income_80tr: {
+      payTaxes.value =
+        (money - income_80tr) * taxover_81tr +
+        income_80tr * tax_80tr +
+        income_52tr * tax_52tr +
+        income_32tr * tax_32tr +
+        income_18tr * tax_18tr +
+        income_10tr * tax_10tr +
+        income_5tr * tax_5tr;
+      break;
+    }
+  }
+}
+  </script>
+</html>
