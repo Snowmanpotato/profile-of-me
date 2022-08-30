@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1" class="table1">
+        <tbody>
+            <tr>
+                <td>Mã học viên</td>
+                <td><input type="number" placeholder="0123-456" pattern="[0-9]{4}-[0-9]{3}" ;></td>
+            </tr>
+            <tr>
+                <td>Họ và Tên</td>
+                <td><input type="text" placeholder="Nguyễn Văn A" ;></td>
+            </tr>
+            <tr>
+                <td>Ngày Sinh</td>
+                <td><input type="date"></td>
+            </tr>
+            <tr>
+                <td> Giới tính</td>
+                <td>
+                    <input type="radio" id="man" name="Gender" value="Nam" ;>
+                    <label for="man">Nam</label>
+                    <input type="radio" id="lady" name="Gender" value="Nữ" ;>
+                    <label for="lady">Nữ</label>
+                    <input type="radio" id="lgbt" name="Gender" value="Khác" ;>
+                    <label for="lgbt">Khác</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Lớp</td>
+                <td><input type="text" placeholder="C0722H1" ;></td>
+            </tr>
+            <tr>
+                <td> Số điện thoại</td>
+                <td><input type="number" placeholder="1234-567-891" pattern="[0]{1}-[0-9]{3}-[0-9]{3}-[0-9]{3}" ;></td>
+            </tr>
+            <tr>
+                <td> Email</td>
+                <td><input type="email" placeholder="exempal@gmail.com" ;></td>
+            </tr>
+            <tr>
+                <td> Ảnh</td>
+                <td><input type="image" ;></td>
+            </tr>
+            <tr>
+                <td><button onclick="add()" ;>Thêm</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <table border="1" class="table2">
+        <thead>
+            <tr>
+                <td>STT</td>
+                <td>Mã học viên</td>
+                <td>Họ và Tên</td>
+                <td>Ngày Sinh</td>
+                <td>Giới tính</td>
+                <td>Lớp</td>
+                <td>Số điện thoại</td>
+                <td>Email</td>
+                <td>Ảnh</td>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+</body>
+<script src="test.js">
+
+</script>
+
+</html>
