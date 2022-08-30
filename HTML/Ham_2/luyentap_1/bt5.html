@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let star1 = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    let star2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"]
+
+    function check_star(star) {
+        result = '';
+        for (i = 0; i < star1.length; i++) {
+            if (star == star1[i]) {
+                result == star2[i];
+                return result;
+            }
+            else {
+                result = "Không tìm thấy sao";
+                return result;
+            }
+        }
+    }
+    let star = prompt('Nhập vào ngôi sao: ');
+    document.write(check_star(star));
+</script>
+
+</html>
