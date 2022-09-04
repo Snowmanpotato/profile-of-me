@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let test = Number(prompt("test"));
+      let mid = Number(prompt("mid"));
+      let last = Number(prompt("last"));
+      let average = (test + mid + last * 2) / 4;
+      if (
+        test >= 0 &&
+        test <= 10 &&
+        mid >= 0 &&
+        mid <= 10 &&
+        last >= 0 &&
+        last <= 10
+      ) {
+        if (average >= 3.5) {
+          if (average >= 5) {
+            if (average >= 6.5) {
+              if (average >= 8) {
+                alert("Xếp loại giỏi");
+              } else {
+                alert("Xếp loại khá");
+              }
+            } else {
+              alert("Xếp loại trung bình");
+            }
+          } else {
+            alert("Xếp loại yếu");
+          }
+        } else {
+          alert("Xếp loại kém");
+        }
+      } else {
+        alert("Điểm nhập sai");
+      }
+    </script>
+  </body>
+</html>

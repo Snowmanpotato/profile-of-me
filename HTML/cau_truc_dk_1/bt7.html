@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tbody>
+        <tr>
+          <td>Số phút đã gọi</td>
+          <td><input type="number" id="minute" oninput="phoneCharge()" /></td>
+        </tr>
+        <tr>
+          <td>Cước phải trả</td>
+          <td><input type="text" id="payAmount" readonly /></td>
+        </tr>
+        <tr>
+          <td><button onclick="phoneCharge()">Check</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      const timecall_50 = 50;
+      const timecall_150 = 150;
+      const timecall_200 = 200;
+      const obligatory = 25000;
+
+      const callcharge_50 = 600;
+      const callcharge_150 = 400;
+      const callcharge_200 = 200;
+
+      function phoneCharge() {
+        let minute = Number(document.querySelector("#minute").value);
+        let payAmount = document.querySelector("#payAmount");
+        switch (true) {
+          case minute > 0 && minute <= timecall_50: {
+            payAmount.value = callcharge_50 + obligatory;
+            break;
+          }
+          case minute > 0 && minute <= timecall_150: {
+            payAmount.value =
+              (minute - timecall_50) * callcharge_150 +
+              callcharge_50 +
+              obligatory;
+            break;
+          }
+          case minute > 0 && minute <= timecall_200: {
+            payAmount.value =
+              (minute - timecall_150) * callcharge_200 +
+              (timecall_150 - timecall_50) * callcharge_150 +
+              callcharge_50 +
+              obligatory;
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
