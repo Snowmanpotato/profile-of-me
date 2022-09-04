@@ -8,9 +8,11 @@
 
 .row {
 
+
+
     vertical-align: center;
     text-align: right;
-    max-width: 800px;
+    max-width: 1920px;
     margin: 5px auto;
 }
 
@@ -18,7 +20,10 @@
     font-size: 30px;
 }
 
+
 .column {
+
+
     overflow: auto;
     width: 100%;
     margin-bottom: 2px;
@@ -112,4 +117,3 @@ th {
     padding: 5px 0px;
     color: #fff;
 }
-
